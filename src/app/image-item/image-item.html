@@ -1,10 +1,17 @@
 <div
-  class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition duration-300 hover:scale-105 hover:shadow-xl"
->
+  class="flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-md transition-all duration-500 ease-in-out hover:shadow-2xl"
+  [class.border-purple-500]="isFeatured()"
+  [class.ring-4]="isFeatured()"
+  [class.ring-purple-600]="isFeatured()"
+  [class.scale-100]="isFeatured()"
+  [class.z-10]="isFeatured()">
   <img
     [src]="image().image"
-    [alt]="image().alt"
-    class="h-72 w-full object-cover"
+    alt="{{ image().alt }}"
+    title="{{ image().alt }}"
+    class="w-full flex-1 object-cover transition-transform duration-500 hover:scale-110"
+    [class.h-full]="isFeatured()"
+    [class.h-52]="!isFeatured()"
   />
 
   <div class="p-4">
@@ -12,4 +19,5 @@
       {{ image().fullName }}
     </h2>
   </div>
+  
 </div>

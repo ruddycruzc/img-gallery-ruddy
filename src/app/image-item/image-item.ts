@@ -9,4 +9,5 @@ import { Image } from '../interfaces/image-interface';
 })
 export class ImageItem {
   image = input.required<Image>();
+  isFeatured = input<boolean>(false);
 }
